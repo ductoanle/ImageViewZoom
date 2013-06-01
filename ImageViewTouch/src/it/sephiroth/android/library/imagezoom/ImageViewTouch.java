@@ -1,10 +1,13 @@
 package it.sephiroth.android.library.imagezoom;
 
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Matrix;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -38,7 +41,8 @@ public class ImageViewTouch extends ImageViewTouchBase {
 		super( context, attrs );
 	}
 
-	@Override
+	@SuppressLint("NewApi")
+    @Override
 	protected void init() {
 		super.init();
 		mTouchSlop = ViewConfiguration.get( getContext() ).getScaledTouchSlop();
@@ -89,7 +93,8 @@ public class ImageViewTouch extends ImageViewTouchBase {
 		mScaleFactor = getMaxScale() / 3;
 	}
 
-	@Override
+	@TargetApi(Build.VERSION_CODES.FROYO)
+    @Override
 	public boolean onTouchEvent( MotionEvent event ) {
 		mScaleDetector.onTouchEvent( event );
 

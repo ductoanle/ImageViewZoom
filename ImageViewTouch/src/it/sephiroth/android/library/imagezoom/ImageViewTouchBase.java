@@ -1,5 +1,6 @@
 package it.sephiroth.android.library.imagezoom;
 
+import com.android.volley.toolbox.NetworkImageView;
 import it.sephiroth.android.library.imagezoom.easing.Cubic;
 import it.sephiroth.android.library.imagezoom.easing.Easing;
 import it.sephiroth.android.library.imagezoom.graphics.FastBitmapDrawable;
@@ -22,7 +23,7 @@ import android.widget.ImageView;
  * @author alessandro
  * 
  */
-public abstract class ImageViewTouchBase extends ImageView implements IDisposable {
+public abstract class ImageViewTouchBase extends NetworkImageView implements IDisposable {
 
 	public interface OnDrawableChangeListener {
 
